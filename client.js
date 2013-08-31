@@ -10,15 +10,20 @@ socket.on('connect', function () {
   console.log("socket connected") 
 })
 
+var sendcontroller = function (filename){
+	var stream = ss.createStream();
+	var filepath = './controllers/'+filename;
 
-var stream = ss.createStream();
-var filename = 'bananathrower.js';
-var filepath = './controllers/bananathrower.js'
+	ss(socket).emit('addController', stream, {name: filename})
+	fs.createReadStream(filepath).pipe(stream)
+}
 
-ss(socket).emit('addController', stream, {name: filename})
-fs.createReadStream(filepath).pipe(stream)
-
-
+sendcontroller('bananathrower.js')
+/*
+setTimeout(function () { 
+	sendcontroller('engine.js')
+}, 3000)	
+*/
 
 setTimeout(function () {
   options = {
@@ -26,7 +31,7 @@ setTimeout(function () {
     command: "ready"
   }
   socket.emit('execute', options)
-}, 3000)
+}, 5000)
 
 setTimeout(function () {
   options = {
@@ -34,6 +39,22 @@ setTimeout(function () {
     command: "fire"
   }
   socket.emit('execute', options)
-}, 5000)
+}, 7000)
+/*
+setTimeout(function () {
+  options = {
+    controllerID: "engine",
+    command: "forward"
+  }
+  socket.emit('execute', options)
+}, 9000)
 
+setTimeout(function () {
+  options = {
+    controllerID: "engine",
+    command: "stop"
+  }
+  socket.emit('execute', options)
+}, 11000)
+*/
 // socket.emit('private message', { user: 'me', msg: 'whazzzup?' })
