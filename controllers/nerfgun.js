@@ -1,27 +1,22 @@
-module.exports = function () {
+var five = require('johnny-five')
+  , board = require('./../controlCenter')
 
-  var version = "0.0.0"
-    , id = "nerfgun"
+var version = "0.0.0"
+  , id = "nerfgun"
 
-  var five, board, servo, pin = 9
+var pin = 6
+var servo = new five.Servo(pin)
 
-  var init = function (_five, _board) {
-    five = _five
-    board = _board    
-    servo = new five.Servo(pin)
-  }
+var ready = function () {
+  servo.move(60)
+}
 
-  // this.inject = function () {
-  // board.repl.inject({
-  //      b: this.servo
-  //    })
-  //  }
+var fire = function () {
+  servo.move(45)  
+}
 
-  var ready = function () {
-    servo.move(60)
-  }
-
-  var fire = function () {
-    servo.move(45)  
-  }
+module.exports = {
+  ready: ready,
+  fire: fire,
+  id: id
 }

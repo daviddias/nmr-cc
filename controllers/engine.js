@@ -8,12 +8,6 @@ var pin = 3
 var servo = new five.Servo(pin)
 var speed = 30
 
-// this.inject = function () {
-// board.repl.inject({
-//      b: this.servo
-//    })
-//  }
-
 var setSpeed = function (value){
 	// from 0 to 45
 	if(value > 45){ value = 45 }

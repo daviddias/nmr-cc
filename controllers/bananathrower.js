@@ -7,12 +7,6 @@ var version = "0.0.0"
 var pin = 6
 var servo = new five.Servo(pin)
 
-// this.inject = function () {
-// board.repl.inject({
-//      b: this.servo
-//    })
-//  }
-
 var ready = function () {
   servo.move(135)
 }
