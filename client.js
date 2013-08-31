@@ -19,11 +19,9 @@ var sendcontroller = function (filename){
 }
 
 sendcontroller('bananathrower.js')
-
-setTimeout(function () { 
-	sendcontroller('engine.js')
-}, 3000)	
-
+sendcontroller('engine.js')
+sendcontroller('nerfgun.js')
+sendcontroller('steering.js')
 
 setTimeout(function () {
   options = {
@@ -56,5 +54,47 @@ setTimeout(function () {
   }
   socket.emit('execute', options)
 }, 11000)
+
+setTimeout(function () {
+  options = {
+    controllerID: "nerfgun",
+    command: "ready"
+  }
+  socket.emit('execute', options)
+}, 13000)
+
+setTimeout(function () {
+  options = {
+    controllerID: "nerfgun",
+    command: "fire"
+  }
+  socket.emit('execute', options)
+}, 15000)
+
+setTimeout(function () {
+  options = {
+    controllerID: "steering",
+    command: "left"
+  }
+  socket.emit('execute', options)
+}, 17000)
+
+setTimeout(function () {
+  options = {
+    controllerID: "steering",
+    command: "right"
+  }
+  socket.emit('execute', options)
+}, 19000)
+
+setTimeout(function () {
+  options = {
+    controllerID: "steering",
+    command: "center"
+  }
+  socket.emit('execute', options)
+}, 21000)
+
+
 
 // socket.emit('private message', { user: 'me', msg: 'whazzzup?' })
