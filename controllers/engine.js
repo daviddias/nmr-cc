@@ -4,7 +4,7 @@ var five = require('johnny-five')
 var version = "0.0.0"
   , id = "engine"
 
-var pin = 10
+var pin = 3
 var servo = new five.Servo(pin)
 var speed = 30
 
