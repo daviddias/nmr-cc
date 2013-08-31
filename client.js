@@ -19,11 +19,11 @@ var sendcontroller = function (filename){
 }
 
 sendcontroller('bananathrower.js')
-/*
+
 setTimeout(function () { 
 	sendcontroller('engine.js')
 }, 3000)	
-*/
+
 
 setTimeout(function () {
   options = {
@@ -40,7 +40,7 @@ setTimeout(function () {
   }
   socket.emit('execute', options)
 }, 7000)
-/*
+
 setTimeout(function () {
   options = {
     controllerID: "engine",
@@ -56,5 +56,5 @@ setTimeout(function () {
   }
   socket.emit('execute', options)
 }, 11000)
-*/
+
 // socket.emit('private message', { user: 'me', msg: 'whazzzup?' })
