@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>onkeydown test</title>
+
+<script src="node_modules\socket.io\node_modules\socket.io-client\dist\socket.io.js"></script>
+
+<script>
+  var socket = io.connect('http://localhost:8080');
+  
+  setTimeout(function () {
+	  socket.emit('center', { my: 'data' });
+	  socket.emit('stop', { my: 'data' });
+	}, 1000);
+
+  window.onkeydown = keydown;
+  window.onkeyup = keyup;
+
+  function keydown(e) {
+    //alert("keydown event detected!");
+    //alert( "keyCode for the key pressed: " + e.keyCode + "\n" );
+    if(e.keyCode  == 38) {
+      socket.emit('forward', { my: 'data' });
+    } 
+    else if(e.keyCode  == 40) {
+      socket.emit('backward', { my: 'data' });
+    } 
+    else if(e.keyCode  == 37) {
+      socket.emit('left', { my: 'data' });
+    } 
+    else if(e.keyCode  == 39) {
+      socket.emit('right', { my: 'data' });
+    } 
+    else if(e.keyCode  == 66) {
+      socket.emit('bananaFire', { my: 'data' });
+      setTimeout(function() {      
+		  socket.emit('bananaReady', { my: 'data' });
+      }, 1500)
+    } 
+    else if(e.keyCode  == 78) {
+      socket.emit('nerfFire', { my: 'data' });
+      setTimeout(function() {      
+		socket.emit('nerfReady', { my: 'data' });
+      }, 1500)
+    }     
+  }
+  
+  function keyup(e) {
+	  socket.emit('center', { my: 'data' });
+      socket.emit('stop', { my: 'data' });
+  }
+</script>
+
+
+</head>
+<body>
+<p>press and hold down any key to fire the keydown event.</p>
+</body>
+</html>
