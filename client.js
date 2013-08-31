@@ -2,8 +2,8 @@ var io = require('socket.io-client')
   , ss = require('socket.io-stream')
   , fs = require('fs')
 
-socket = io.connect('localhost', {
-  port: 8080
+socket = io.connect('192.168.0.102', {
+  port: 8888
 })
 
 socket.on('connect', function () { 

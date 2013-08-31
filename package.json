@@ -20,7 +20,6 @@
     "url": "https://github.com/diasdavid/node-my-ride-controller/issues"
   },
   "dependencies": {
-    "restify": "~2.6.0",
     "socket.io-client": "~0.9.16",
     "socket.io-stream": "~0.3.1"
   }
