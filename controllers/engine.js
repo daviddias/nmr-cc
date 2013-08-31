@@ -3,7 +3,7 @@ module.exports = function () {
   var version = "0.0.0"
     , id = "engine"
 
-  var five, board, servo, pin = 10
+  var five, board, servo, pin = 3
 
   var init = function (_five, _board) {
     five = _five

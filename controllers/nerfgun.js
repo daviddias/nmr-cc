@@ -3,7 +3,7 @@ module.exports = function () {
   var version = "0.0.0"
     , id = "nerfgun"
 
-  var five, board, servo, pin = 11
+  var five, board, servo, pin = 9
 
   var init = function (_five, _board) {
     five = _five

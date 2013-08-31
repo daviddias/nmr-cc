@@ -4,7 +4,7 @@ var five = require('johnny-five')
 var version = "0.0.0"
   , id = "banana"
 
-var pin = 8
+var pin = 6
 var servo = new five.Servo(pin)
 
 // this.inject = function () {
