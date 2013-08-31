@@ -4,7 +4,7 @@ var five = require('johnny-five')
 var version = "0.0.0"
   , id = "nerfgun"
 
-var pin = 6
+var pin = 9
 var servo = new five.Servo(pin)
 
 var ready = function () {

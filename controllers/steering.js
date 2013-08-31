@@ -7,20 +7,20 @@ var version = "0.0.0"
 var pin = 5
 var servo = new five.Servo(pin)
 
-this.turn = function (degree){
-  this.servo.move(degree)
+var turn = function (degree){
+  servo.move(degree)
 }
 
-this.left = function () {
-  this.servo.move(135)
+var left = function () {
+  servo.move(135)
 }
 
-this.center = function () {
-  this.servo.move(90)
+var center = function () {
+  servo.move(90)
 }
 
-this.right = function () {
-  this.servo.move(45)  
+var right = function () {
+  servo.move(45)  
 }
 
 module.exports = {
