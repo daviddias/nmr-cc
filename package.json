@@ -1,0 +1,27 @@
+{
+  "name": "node-my-ride-controller",
+  "version": "0.0.0",
+  "description": "node-my-ride-controller =======================",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/diasdavid/node-my-ride-controller.git"
+  },
+  "author": [
+    "David Dias <daviddias.p@gmail.com>",
+    "Francisco Dias <xicombd@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diasdavid/node-my-ride-controller/issues"
+  },
+  "dependencies": {
+    "restify": "~2.6.0",
+    "socket.io-client": "~0.9.16",
+    "socket.io-stream": "~0.3.1"
+  }
+}
