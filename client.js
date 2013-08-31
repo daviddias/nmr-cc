@@ -2,8 +2,8 @@ var io = require('socket.io-client')
   , ss = require('socket.io-stream')
   , fs = require('fs')
 
-socket = io.connect('localhost', {
-  port: 8080
+socket = io.connect('192.168.0.102', {
+  port: 8888
 })
 
 socket.on('connect', function () { 
@@ -19,11 +19,11 @@ var sendcontroller = function (filename){
 }
 
 sendcontroller('bananathrower.js')
-/*
+
 setTimeout(function () { 
 	sendcontroller('engine.js')
 }, 3000)	
-*/
+
 
 setTimeout(function () {
   options = {
@@ -40,7 +40,7 @@ setTimeout(function () {
   }
   socket.emit('execute', options)
 }, 7000)
-/*
+
 setTimeout(function () {
   options = {
     controllerID: "engine",
@@ -56,5 +56,5 @@ setTimeout(function () {
   }
   socket.emit('execute', options)
 }, 11000)
-*/
+
 // socket.emit('private message', { user: 'me', msg: 'whazzzup?' })
