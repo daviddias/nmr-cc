@@ -1,22 +1,16 @@
-var five = require('johnny-five')
-  , board = require('./../controlCenter')
+module.exports = function(five) {
+  var pin = 6;
+  var servo = new five.Servo(pin);
 
-var version = "0.0.0"
-  , id = "banana"
-
-var pin = 6
-var servo = new five.Servo(pin)
-
-var ready = function () {
-  servo.move(135)
-}
-
-var fire = function () {
-  servo.move(10)  
-}
-
-module.exports = {
-  ready: ready,
-  fire: fire,
-  id: id
-}
+  return {
+    id: 'banana',
+    pin: pin,
+    servo: servo,
+    ready: function() {
+      servo.move(135);
+    },
+    fire: function () {
+      servo.move(10);
+    }
+  };
+};
