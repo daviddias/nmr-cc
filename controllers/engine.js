@@ -2,6 +2,7 @@ module.exports = function(five) {
   var pin = 3;
   var servo = new five.Servo(pin);
   var speed = 45;
+  servo.move(45);
   return {
     id: 'engine',
     pin: pin,
@@ -18,10 +19,10 @@ module.exports = function(five) {
     stop: function() {
       servo.center();
     },
-    forward = function () {
+    forward: function () {
       servo.move(90+speed);
     },
-    backward = function () {
+    backward: function () {
       servo.move(90-speed);
     }
   };

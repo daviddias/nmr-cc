@@ -12,12 +12,12 @@ module.exports = function(five) {
     left: function () {
       servo.move(135);
     },
-    center = function () {
+    center: function () {
       servo.move(90);
     },
-    right = function () {
+    right: function () {
       servo.move(45);
-    };
-  };
+    }
+  }
 };
 

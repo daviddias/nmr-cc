@@ -7,10 +7,10 @@ module.exports = function(five) {
     pin: pin,
     servo: servo,
     ready: function() {
-      servo.move(135);
+      servo.move(45);
     },
     fire: function () {
-      servo.move(10);
+      servo.move(180);
     }
   };
 };

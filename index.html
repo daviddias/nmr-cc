@@ -4,8 +4,7 @@
 <meta charset="UTF-8" />
 <title>onkeydown test</title>
 
-<!-- <script src="node_modules\socket.io\node_modules\socket.io-client\dist\socket.io.js"></script>
--->
+<script src="socket.io.min.js"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
 
@@ -36,9 +35,9 @@
       socket.emit('right', { my: 'data' });
     } 
     else if(e.keyCode  == 66) {
-      socket.emit('bananaFire', { my: 'data' });
+      socket.emit('bananaReady', { my: 'data' });
       setTimeout(function() {      
-		  socket.emit('bananaReady', { my: 'data' });
+		  socket.emit('bananaFire', { my: 'data' });
       }, 1500)
     } 
     else if(e.keyCode  == 78) {
