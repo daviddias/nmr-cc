@@ -2,10 +2,10 @@
   "name": "node-my-ride-controller",
   "version": "0.0.0",
   "description": "node-my-ride-controller =======================",
-  "main": "client.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node client.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
